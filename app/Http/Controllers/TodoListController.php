@@ -22,8 +22,7 @@ class TodoListController extends Controller
 
     public function store(TodoListRequest $request)
     {
-        $list = TodoList::create($request->all());
-        return $list; // automatically returns 201 status
+        return TodoList::create($request->all()); // automatically returns 201 status 
     }
 
     public function destroy(TodoList $todo_list)
