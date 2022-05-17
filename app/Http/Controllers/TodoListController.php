@@ -25,4 +25,10 @@ class TodoListController extends Controller
         $list = TodoList::create($request->all());
         return $list; // automatically returns 201 status
     }
+
+    public function destroy(TodoList $list)
+    {
+        $list->delete();
+        return response('', Response::HTTP_NO_CONTENT);
+    }
 }
